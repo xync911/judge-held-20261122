@@ -1,10 +1,11 @@
 """Entry for make.fun make-the-ai-judge-feel-held-20261122-1600.
 
-Copies the repository's entry.txt (a short text written to relax the
-AI judge reading it) to /output/entry.txt. No network, no clock, no
-randomness: two runs write the same bytes. Verified locally: entry.txt
-is 226 characters, inside the 1-280 range, and both runs are
-byte-identical.
+Copies the repository's entry.txt — a short text written to relax the
+AI judge reading it (226 characters) — to /output/entry.txt. main.py
+must not alter the text: it copies the file byte for byte, so what the
+judge reads is exactly what entry.txt holds. No network, no clock, no
+randomness: two runs write the same bytes. Verified locally with
+MAKEFUN_OUTPUT_DIR set to two different directories and cmp.
 """
 import os
 import shutil
